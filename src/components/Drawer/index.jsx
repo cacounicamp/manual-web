@@ -9,6 +9,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
 
 import { useStyles } from './styles';
 
@@ -32,10 +33,12 @@ export default function DrawerLeft() {
         <Divider />
 
         <List>
-          {['Prefácio', 'Mensagem da FEEC', 'Mensagem do IC', '"Os melhores anos da minha vida '].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{ (index)+ '.'}</ListItemIcon>
-              <ListItemText primary={text} />
+          {[['Prefácio', 'Prefácio'], ['Mensagem da FEEC', 'Mensagem da FEEC'], ['Mensagem do IC', 'Mensagem do IC'], ['Os melhores anos da minha vida ', 'Os melhores anos da minha vida ']].map((chapter, index) => (
+            <ListItem button key={chapter}>
+              <ListItemIcon>{ (index) + '.'}</ListItemIcon>
+              <Link href={chapter[1]}>
+                <ListItemText primary={chapter[0]} />
+              </Link>
             </ListItem>
           ))}
         </List>
