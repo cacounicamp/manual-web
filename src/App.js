@@ -1,6 +1,6 @@
 import React from "react";
 import AppBar from "./components/AppBar";
-import Drawer from "./Drawer";
+import Drawer from "./components/Drawer";
 import { theme } from "../src/theme";
 import { ThemeProvider } from "@material-ui/core";
 
